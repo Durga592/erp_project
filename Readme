@@ -1,0 +1,46 @@
+################ PROJECT, APP creation & GIT COMMIT steps ################
+django-admin startproject DataCenter
+
+cd DataCenter  ->   
+	python manage.py startapp cooling
+	python manage.py startapp cooling1
+	python manage.py startapp cooling2
+	python manage.py startapp cooling3
+	python manage.py startapp cooling4
+	python manage.py startapp cooling5
+
+python manage.py runserver
+
+################ GIT PROJECT ADD && UPDATE steps ################
+I)
+1. git init
+2. git add .
+3. git config --global user.email "mail id"
+4. git config --global user.name "GITHUB USERNAME"
+5. git commit -m "Some message for data commit"
+6. git remote add origin https://github.com/Durga592/djbatch6.git
+7. git push -u origin master
+
+II)
+FOR NEW FILE COMMIT
+
+->git add Notes.txt    (OR)   git add .
+->git commit -m "New file updates" Notes.txt  (OR) git commit -m "New file updates"
+->git push -u origin master  (OR)   git push origin master
+
+III)
+FOR EXISTING FILE DATA UPDATION
+
+->git commit -m "New addons" DataCenter\urls.py   (OR)   git commit -m "New file updates"
+->git push -u origin master   (OR)   git push origin master
+IV)
+local urls:-
+from FINANCE.views import finance_modules
+from PRODUCTS.views import creation
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^fin_modules/', finance_modules),
+    url(r'^products/', creation),
+]
+

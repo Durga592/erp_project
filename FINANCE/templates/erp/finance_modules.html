@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FINANCE - FIANCE MODULES</title>
+</head>
+<body >
+	<center> {{ suc_msg }} </center>
+	<form method="post" autocomplete="off">
+		{% csrf_token %}
+		<table cellpadding="2" width="30.8%" bgcolor="#ccc" align="center" cellspacing="2">
+			<tr>
+			  <td colspan=2>
+			  	<center><font size=4><b>FINANCE MODULES</b></font></center>
+			  </td>
+			</tr>
+			<tr>
+			  <td>Module Name</td>
+			  <td><input type=text name=modulename id="modulename" size="30"></td>
+			</tr>
+			<tr>
+			<td>Resource Name</td>
+			  <td><input type="text" name="resourcename" id="resourcename" size="30"></td>
+			</tr>
+			<tr>
+			  <td>Module Duration</td>
+			  <td><input type="text" name="duration" id="duration" size="30"></td>
+			</tr>
+			<tr>
+			  <td>Client Name</td>
+			  <td><input type="text" name="clientname" id="clientname" size="30"></td>
+			</tr>
+			<tr>
+			  <td><input type="reset"></td>
+			  <td colspan="2"><input type="submit" value="Submit Form" /></td>
+			</tr>
+		</table>
+	</form>
+	<div style="margin-top:10px;">
+		<table border="2" cellpadding="2" width="30%" bgcolor="#ccc" align="center" cellspacing="2">
+			<tr>
+				<th>ROW ID</th>
+				<th>MODULE NAME</th>
+				<th>RESOURCE NAME</th>
+				<th>MODULE DURATION</th>
+				<th>CLIENT NAME</th>
+				<th>Operation 1</th>
+				<th>Operation 2</th>
+			</tr>
+			{% for row in fin_data %}
+			<tr>
+				<td>{{row.id}}</td>
+				<td>{{row.module_name}}</td>
+				<td>{{row.resource_name}}</td>
+				<td>{{row.module_duration}}</td>
+				<td>{{row.client_name}}</td>
+				<td><a href="/fin_update/{{ row.id}}/">Update</a></td>
+				<td><a href="/fin_remove/{{ row.id}}/">Delete</a></td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</body>
+</html>
